@@ -6,7 +6,7 @@ class Show(models.Model):
     # Monday, Tuesday, Wednesday...
     day = models.CharField(max_length=50, default="  ")
     # Friday, October 19th, 2018
-    date = models.DateTimeField(default="  ")
+    date = models.DateTimeField()
     # Percussionist Adam Lion
     title = models.CharField(max_length=200, default="  ")
     # Percussionist Adam Lion performs works on vibraphone by John Cage, Alvin Lucier, Mark Applebaum, and Sarah Hennies.
@@ -21,7 +21,7 @@ class Show(models.Model):
     freshtix = models.CharField(max_length=200, default="n/a")
 
     def __str__(self):
-        return self.day + " " + self.date.strftime("%m-%d-%Y %H:%M") + " " + self.title
+        return self.date.strftime("%m/%d/%Y %I:%M %p") + " " + self.day + ", " + self.title
 
     def next_seven(self):
         return self.date >= timezone.now() - datetime.timedelta(days=7)
@@ -68,4 +68,4 @@ class Contact(models.Model):
     press = models.ForeignKey(Press, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name + " " + self.press.name
+        return self.name + " - " + self.press.name

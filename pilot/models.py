@@ -16,7 +16,7 @@ class Show(models.Model):
     # 18+
     age = models.CharField(max_length=5, default="  ")
     # $5
-    price = models.CharField(max_length=5, default="  ")
+    price = models.CharField(max_length=10, default="  ")
     # https://www.freshtix.com/events/bob-log-iii-2018-08-20
     freshtix = models.CharField(max_length=200, default="n/a")
 

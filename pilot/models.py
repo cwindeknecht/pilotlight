@@ -11,8 +11,6 @@ class Show(models.Model):
     title = models.CharField(max_length=200, default="  ")
     # Percussionist Adam Lion performs works on vibraphone by John Cage, Alvin Lucier, Mark Applebaum, and Sarah Hennies.
     description = models.CharField(max_length=1000, default="  ")
-    # 9:00pm
-    time = models.CharField(max_length=10, default="  ")
     # 18+
     age = models.CharField(max_length=5, default="  ")
     # $5
@@ -25,7 +23,6 @@ class Show(models.Model):
 
     def next_seven(self):
         return self.date >= timezone.now() - datetime.timedelta(days=7)
-
 
 class Band(models.Model):
     # Adam Faucett

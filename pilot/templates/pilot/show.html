@@ -1,0 +1,12 @@
+<h1>{{ show.title }}</h1>
+<h2>{{ show.day }},{{ show.date }}</h2>
+<h3>{{show.description}}</h3>
+<h3>Ages {{show.age}}, {{show.price}}</h3>
+{% if show.freshtix != "n/a" %}
+<h3>{{show.freshtix}}</h3>
+{% endif %}
+<!-- <ul>
+    {% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }}</li>
+    {% endfor %}
+</ul> -->

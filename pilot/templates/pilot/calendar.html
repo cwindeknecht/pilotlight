@@ -1,0 +1,10 @@
+{% if next_seven_shows %}
+    <ul>
+    {% for show in next_seven_shows %}
+    <li><a href="{% url 'pilot:show' show.id %}">{{ show }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No shows are available.</p>
+{% endif %}
+

@@ -1,0 +1,9 @@
+{% if last_seven_days %}
+    <ul>
+    {% for show in last_seven_days %}
+        <li>{{ show }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No shows are available.</p>
+{% endif %}
